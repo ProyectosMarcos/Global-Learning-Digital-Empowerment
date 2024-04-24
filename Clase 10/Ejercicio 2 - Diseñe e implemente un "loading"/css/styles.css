@@ -1,0 +1,39 @@
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100svh;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.loader {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    border: .7rem solid rgba(0, 0, 0, 0.1);
+    border-right-color: #09f;
+    animation: loading 1s ease-in-out infinite
+}
