@@ -1,0 +1,62 @@
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+    height: 100%;
+
+}
+
+body {
+    min-height: 100svh;
+    min-width: 100%;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+
+
+.container__tarjeta {
+    background-color: rgb(227, 210, 210);
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 14rem;
+    height: 20rem;
+    border-radius: 1rem;
+}
+
+.background {
+    position: fixed;
+    background-color: green;
+    width: 14rem;
+    height: 10rem;
+    top: 2rem;
+    border-radius: .5rem;
+}
+
+.tarjeta {
+    width: 14rem;
+    height: 20rem;
+    border: thin solid rgb(222, 20, 20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(227, 210, 210);
+    border-radius: 1rem;
+
+}
+
+.circulo {
+    background-color: black;
+    border: thick solid rgb(243, 236, 236);
+    width: 7rem;
+    height: 7rem;
+    top: 7rem;
+    border-radius: 50%;
+    position: fixed;
+
+}
