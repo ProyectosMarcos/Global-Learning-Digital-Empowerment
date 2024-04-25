@@ -1,0 +1,663 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 100%;
+}
+
+body {
+    min-height: 100svh;
+    min-width: 100%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    --background-primary: #000078;
+    --background-secondary: #22c9c9;
+    --color-primary: rgb(171, 190, 241);
+    --color-secondary: rgb(17, 157, 212);
+    --color-white: #ffff;
+    --color-menu-hamburguesa: #3be463;
+    --background-color-menu-hamburguesa: #f2f2d4;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+    color: var(--color-white);
+    background-color: var(--background-primary);
+}
+
+body :is(p, li, a) {
+    font-size: 1.3rem;
+}
+
+p {
+    color: black;
+    background-color: #ffeee7;
+}
+
+li {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:visited {
+    color: rgb(2, 31, 46);
+}
+
+/* Version Movil */
+@media(width < 768px) {
+    .container__areas {
+        display: grid;
+        grid-template:
+            "header" 77px
+            "navbar" 52px
+            "main" 1fr
+            "footer" 70px
+            / 1fr;
+    }
+
+    /** header **/
+    .header {
+        background-color: var(--background-primary);
+        text-align: center;
+        color: var(--color-white);
+        padding: 1em;
+        grid-area: header;
+        font-size: .7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar {
+        grid-area: navbar;
+    }
+
+
+
+    /** button hamburguesa **/
+    .btn__menu {
+        position: fixed;
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 999;
+        opacity: 0;
+    }
+
+    .btn__hamburguesa {
+        position: fixed;
+        width: 3rem;
+        height: 0.6rem;
+        background-color: var(--color-menu-hamburguesa);
+        border-radius: 0.3rem;
+        transform: rotate(0deg) translate(0, -1.2rem);
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 998;
+    }
+
+    .btn__hamburguesa::before,
+    .btn__hamburguesa::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 0.6rem;
+        background-color: var(--color-menu-hamburguesa);
+        border-radius: 0.3rem;
+        transition: transform 500ms ease;
+    }
+
+    .btn__hamburguesa::before {
+        transform: rotate(0deg) translate(0, -0.9rem);
+    }
+
+    .btn__hamburguesa::after {
+        transform: rotate(0deg) translate(0, 0.3rem);
+    }
+
+    .btn__menu:checked+.btn__hamburguesa {
+        background-color: transparent;
+    }
+
+    .btn__menu:checked+.btn__hamburguesa::before {
+        transform: rotate(45deg) translate(0, 0);
+    }
+
+    .btn__menu:checked+.btn__hamburguesa::after {
+        transform: rotate(-45deg) translate(0.4rem, -0.5rem)
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 1;
+        left: 0;
+        z-index: 997;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(82, 206, 206);
+        transform: translate(0, -100%);
+        transition: transform 500ms ease-in-out, background-color 500ms ease;
+    }
+
+    .btn__menu:checked~.navbar {
+        transform: translate(0, 0);
+    }
+
+    .navbar__menu {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .navbar__links {
+        font-size: 1.4rem;
+    }
+
+    /**Fin estilos header **/
+
+    /** main **/
+    .main {
+        color: var(--color-white);
+        grid-area: main;
+    }
+
+
+
+
+        /** Tarjeta **/
+        .container__tarjeta {
+            display: flex;
+            justify-content: center;
+        }
+    
+        .tarjeta {
+            position: relative;
+            width: 17rem;
+            height: 28rem;
+            background-color: #fdfdfd;
+            border: thin solid black;
+            border-radius: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .background {
+            position: absolute;
+            width: 17rem;
+            height: 12.2rem;
+            border-radius: 1rem;
+            top: 0;
+        }
+    
+        .background img {
+            object-fit: cover;
+            height: 12.2rem;
+            border-radius: 1rem;
+        }
+    
+        .container__perfil {
+            position: absolute;
+            width: 12.2rem;
+            height: 12.2rem;
+            top: 4rem;
+            border-radius: 50%;
+            border: thick solid #064486fa;
+    
+    
+        }
+    
+        .container__perfil img {
+            border-radius: 50%;
+        }
+    
+    
+        .container__perfil h3 {
+            color: black;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+    
+    
+    
+        .descripcion>p {
+            margin-top: 11rem;
+            background-color: white;
+            font-size: 1rem;
+        }
+    
+    
+        .container__redes {
+            width: 10rem;
+            height: 4rem;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            bottom: 0;
+        }
+    
+        .container__redes img {
+            width: 2rem;
+            height: 2rem;
+        }
+    
+        /** Fin Tarjeta **/
+
+
+
+    .descripcion {
+        text-align: center;
+        color: black;
+        font-size: .8rem;
+        width: auto;
+        margin-top: 4rem;
+
+    }
+
+    body :is(.localidad, .herramientas, .educacion,
+        .capacitaciones,
+        .experiencia__laboral, .contacto) {
+        background-color: #cbf3f3;
+        border: thick solid white
+    }
+
+    body :is(.localidad, .herramientas, .educacion,
+        .capacitaciones,
+        .experiencia__laboral, .contacto) h3 {
+        background-color: #000078;
+    }
+
+    body :is(.localidad, .herramientas, .educacion,
+        .capacitaciones,
+        .experiencia__laboral, .contacto) ul {
+        padding: 1em;
+        list-style-type: none;
+    }
+
+    body :is(.localidad, .herramientas, .educacion,
+        .capacitaciones,
+        .experiencia__laboral, .contacto) ul:hover {
+        background-color: rgb(90, 88, 88);
+    }
+
+    body :is(.localidad, .herramientas, .educacion,
+        .capacitaciones,
+        .experiencia__laboral, .contacto) li {
+        background-color: #fffaf4;
+        border: solid thin rgb(200, 201, 201);
+        color: black;
+        padding: 1em;
+    }
+
+
+
+    /* formulario */
+    .contacto {
+        text-align: center;
+    }
+
+    .contacto h3 {
+        font-size: 1.7rem;
+    }
+
+
+
+    form label {
+        color: black;
+        font-size: 1.3rem;
+
+    }
+
+    form article {
+        margin-top: 1em;
+    }
+
+    form :is(input, textarea) {
+        font-size: 1.1rem;
+    }
+
+    button[type="submit"] {
+        width: 10rem;
+        height: 2rem;
+        font-size: 1.2rem;
+        background-color: #4ef3ae;
+        color: black;
+        cursor: pointer;
+
+    }
+
+    button[type="submit"]:active {
+        transform: scale(0.9);
+        transition: transform 0.1s ease;
+    }
+
+    /* Fin estilos formulario */
+
+
+    /** Fin estilos main **/
+    /* footer */
+    .footer {
+        grid-area: footer;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0303037a;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--color-white);
+    }
+
+    .link {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Fin Version Movil */
+/*************************************************/
+
+/* Version Desktop */
+@media(width >=768px) {
+    .container__areas {
+        display: grid;
+        grid-template:
+            "header header" 77px
+            "navbar navbar" 50px
+            "main   main" 1fr
+            "footer footer" 70px / 1fr 1fr
+    }
+
+    /** header **/
+    .header {
+        background-color: var(--background-primary);
+        text-align: center;
+        color: var(--color-white);
+        padding: 1em;
+        grid-area: header;
+    }
+
+    .navbar {
+        padding: 1em;
+        grid-area: navbar;
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        top: 4.5rem;
+        width: 100%;
+        background-color: rgb(248, 248, 248);
+        border: solid thick #7aedb3;
+        ;
+
+    }
+
+    .navbar__menu {
+        display: flex;
+        gap: 1rem;
+        list-style-type: none;
+
+
+    }
+
+    .navbar__links {
+        font-size: 1.3rem;
+
+    }
+
+    .navbar__links:hover {
+        background-color: #7aedb3;
+    }
+
+    .btn__menu {
+        display: none;
+    }
+
+    /**Fin estilos header **/
+
+    /** main **/
+    .main {
+        color: var(--color-white);
+        grid-area: main;
+        padding: 2em;
+    }
+
+
+    [id] {
+        scroll-margin-top: 7.9rem;
+    }
+
+    .descripcion {
+        text-align: center;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 4rem;
+
+    }
+
+
+    /** Tarjeta **/
+    .container__tarjeta {
+        display: flex;
+        justify-content: center;
+    }
+
+    .tarjeta {
+        position: relative;
+        width: 17rem;
+        height: 28rem;
+        background-color: #fdfdfd;
+        border: thin solid black;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .background {
+        position: absolute;
+        width: 17rem;
+        height: 12.2rem;
+        border-radius: 1rem;
+        top: 0;
+    }
+
+    .background img {
+        object-fit: cover;
+        height: 12.2rem;
+        border-radius: 1rem;
+    }
+
+    .container__perfil {
+        position: absolute;
+        width: 12.2rem;
+        height: 12.2rem;
+        top: 4rem;
+        border-radius: 50%;
+        border: thick solid #064486fa;
+
+
+    }
+
+    .container__perfil img {
+        border-radius: 50%;
+    }
+
+
+    .container__perfil h3 {
+        color: black;
+        font-size: 1.3rem;
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+
+
+
+    .descripcion>p {
+        margin-top: 11rem;
+        background-color: white;
+        font-size: 1rem;
+    }
+
+
+    .container__redes {
+        width: 10rem;
+        height: 4rem;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        bottom: 0;
+    }
+
+    .container__redes img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    /** Fin Tarjeta **/
+
+
+    body :is(.localidad, .herramientas, .educacion,
+        .capacitaciones,
+        .experiencia__laboral, .contacto) {
+        background-color: #cbf3f3;
+        border: thick solid white
+    }
+
+    body :is(.localidad, .herramientas, .educacion,
+        .capacitaciones,
+        .experiencia__laboral, .contacto) h3 {
+        background-color: #000078;
+    }
+
+    body :is(.localidad, .herramientas, .educacion,
+        .capacitaciones,
+        .experiencia__laboral, .contacto) ul {
+        padding: 1em;
+        list-style-type: none;
+    }
+
+    body :is(.localidad, .herramientas, .educacion,
+        .capacitaciones,
+        .experiencia__laboral, .contacto) ul:hover {
+        background-color: rgb(90, 88, 88);
+    }
+
+    body :is(.localidad, .herramientas, .educacion,
+        .capacitaciones,
+        .experiencia__laboral, .contacto) li {
+        background-color: #fffaf4;
+        border: solid thin rgb(200, 201, 201);
+        color: black;
+        padding: 1em;
+    }
+
+
+
+    /* formulario */
+    .contacto {
+        text-align: center;
+    }
+
+    .contacto h3 {
+        font-size: 1.7rem;
+    }
+
+
+
+    form label {
+        color: black;
+        font-size: 1.3rem;
+
+    }
+
+    form article {
+        margin-top: 1em;
+    }
+
+    form :is(input, textarea) {
+        font-size: 1.1rem;
+    }
+
+    button[type="submit"] {
+        width: 10rem;
+        height: 2rem;
+        font-size: 1.2rem;
+        background-color: #4ef3ae;
+        color: black;
+        cursor: pointer;
+
+    }
+
+    button[type="submit"]:active {
+        transform: scale(0.9);
+        transition: transform 0.1s ease;
+    }
+
+    /* Fin estilos formulario */
+
+
+    /** Fin estilos main **/
+
+    /* footer */
+    .footer {
+        grid-area: footer;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0303037a;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--color-white);
+    }
+
+    .link {
+        display: flex;
+        justify-content: center;
+    }
+
+
+}
+
+/*  Configs */
+@media(width >=768px) and (width < 833px) {
+    .navbar__links {
+        font-size: 1.1rem;
+    }
+
+
+}

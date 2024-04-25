@@ -3,11 +3,18 @@ html {
     box-sizing: border-box;
     height: 100%;
 
+
 }
 
 body {
     min-height: 100svh;
     min-width: 100%;
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 *,
@@ -21,42 +28,76 @@ body {
 
 
 .container__tarjeta {
-    background-color: rgb(227, 210, 210);
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
     margin-top: 2rem;
-    width: 14rem;
-    height: 20rem;
-    border-radius: 1rem;
+
+
 }
 
 .background {
-    position: fixed;
-    background-color: green;
+    position: absolute;
+    background-image: url(../assets/img/selva.jpg);
     width: 14rem;
     height: 10rem;
-    top: 2rem;
+    top: 0;
     border-radius: .5rem;
+
 }
 
 .tarjeta {
     width: 14rem;
-    height: 20rem;
-    border: thin solid rgb(222, 20, 20);
+    position: relative;
+    height: 25rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(227, 210, 210);
-    border-radius: 1rem;
+    border-radius: .5rem;
+    border: thin solid rgb(0, 0, 0);
+    background-color: white;
 
 }
 
 .circulo {
-    background-color: black;
-    border: thick solid rgb(243, 236, 236);
-    width: 7rem;
-    height: 7rem;
-    top: 7rem;
+    width: 10rem;
+    height: 10rem;
+    top: 4rem;
     border-radius: 50%;
-    position: fixed;
+    position: absolute;
+}
 
+.circulo img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: thick solid #ffffff;
+    object-fit: cover;
+    object-position: 1% 10%;
+}
+
+.circulo h3,
+p {
+    text-align: center;
+}
+
+.circulo p {
+    color: grey;
+    font-size: 1rem;
+}
+
+.descripcion {
+    margin-top: 15em;
+}
+
+.container__redes {
+    height: 2rem;
+    position: absolute;
+    display: flex;
+    gap: 1rem;
+    top: 22.5rem;
+}
+
+.container__redes img {
+    width: 1.5rem;
+    height: 1.5rem;
 }
