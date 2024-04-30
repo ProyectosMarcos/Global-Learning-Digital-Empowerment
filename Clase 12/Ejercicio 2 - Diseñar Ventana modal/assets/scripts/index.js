@@ -10,6 +10,6 @@ window.addEventListener('DOMContentLoaded', () => {
     .addEventListener('click', () => $modal.close());
 
   const $btnCancel = document
-    .getElementById('close')
+    .getElementById('cancel')
     .addEventListener('click', () => $modal.close());
 });

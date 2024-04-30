@@ -18,16 +18,28 @@
             <h2>Complet this form</h2>
             <div class="box">
               <label for="firstName">First name:</label>
-              <input type="text" name="First name" id="firstName" />
+              <input
+                type="text"
+                name="First name"
+                id="firstName"
+                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+              />
             </div>
 
             <div class="box">
               <label for="lastName">Last name:</label>
-              <input type="text" name="Last name" id="lastName" />
+              <input
+                type="text"
+                name="Last name"
+                id="lastName"
+                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+              />
             </div>
 
             <div class="box">
-              <label for="username">Username:</label>
+              <label for="username" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                >Username:</label
+              >
               <input type="text" name="Username" id="username" />
             </div>
 
