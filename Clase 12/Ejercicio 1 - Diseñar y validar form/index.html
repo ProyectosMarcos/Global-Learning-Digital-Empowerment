@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <title></title>
+  </head>
+  <body>
+    <!--  Ejercicio 1: Mediante el uso de HTML, CSS y JavaScript, diseñe un formulario de registro con los siguientes campos: first name, last name, username, password, confirm password, birthday, newsletter checkbox. Con JavaScript realice  las validaciones de datos que considere necesarias, por ejemplo que no se puedan poner números en los campos first name y last name. -->
+    <header class="header">
+      <h1 class="title" style="text-align: center">Ejercicio Formulario</h1>
+    </header>
+    <main class="main">
+      <section class="form">
+        <article class="container__form">
+          <form action="">
+            <h2>Complet this form</h2>
+            <div class="box">
+              <label for="firstName">First name:</label>
+              <input type="text" name="First name" id="firstName" />
+            </div>
+
+            <div class="box">
+              <label for="lastName">Last name:</label>
+              <input type="text" name="Last name" id="lastName" />
+            </div>
+
+            <div class="box">
+              <label for="username">Username:</label>
+              <input type="text" name="Username" id="username" />
+            </div>
+
+            <div class="box">
+              <label for="password">Password:</label>
+              <input type="password" name="password" id="password" />
+            </div>
+
+            <div class="box">
+              <label for="repeatPassword">Confirm password:</label>
+              <input
+                type="password"
+                name="repeatPassword"
+                id="repeatPassword"
+              />
+            </div>
+
+            <div class="box">
+              <label for="">Birthday:</label>
+              <input type="date" />
+            </div>
+            <div class="box">
+              <label for="newsletter">Newsletter checkbox:</label>
+              <input type="checkbox" name="newsletter" id="newsletter" />
+            </div>
+          </form>
+        </article>
+      </section>
+    </main>
+    <script src="./assets/scripts/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100svh;
+    background-color: rgb(127, 190, 192);
+
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+
+.header>h1 {
+    text-align: center;
+}
+
+.button__open {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+.button__open button {
+    font-size: 1.1rem;
+    background-color: aqua;
+    padding: .5em;
+    width: 5em;
+
+}
+
+button:active {
+    transform: scale(0.9);
+    transition: transform 0.5ms ease-in;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+dialog {
+    margin: auto;
+    width: 800px;
+    padding: 4rem;
+    background-color: antiquewhite;
+}
+
+dialog::backdrop {
+    background-color: #09090991;
+    opacity: 0.25rem;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.box button {
+    font-size: 1rem;
+
+}
+
+
+
+form {
+    display: flex;
+    padding: 1em;
+    flex-direction: column;
+    position: relative;
+
+}
+
+form h2,
+h3 {
+    text-align: center;
+}
+
+form h2 {
+    font-size: 1.3rem;
+}
+
+form>button {
+    all: unset;
+    cursor: pointer;
+    width: min-content;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+form .box {
+    position: absolute;
+    top: 5.7rem;
+    left: 0;
+    right: 0;
+
+}
+
+.box button {
+    background-color: rgb(171, 205, 255);
+    padding: .3em;
+    margin-top: 1em;
+    cursor: pointer;
+
+}
