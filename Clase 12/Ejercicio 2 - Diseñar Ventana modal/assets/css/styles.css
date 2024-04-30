@@ -18,7 +18,7 @@ body {
 }
 
 
-.header>h1 {
+.header h1 {
     text-align: center;
 }
 
@@ -78,13 +78,11 @@ form {
     padding: 1em;
     flex-direction: column;
     position: relative;
-
-}
-
-form h2,
-h3 {
     text-align: center;
+
 }
+
+
 
 form h2 {
     font-size: 1.3rem;
