@@ -11,9 +11,9 @@
       <h1 class="title" style="text-align: center">Ejercicio Formulario</h1>
     </header>
     <main class="main">
-      <section class="form">
+      <section>
         <article class="container__form">
-          <form action="">
+          <form class="form" action="" id="loginForm">
             <h2>Complet this form</h2>
             <div class="box">
               <label for="firstName">First name:</label>
@@ -21,55 +21,76 @@
                 type="text"
                 name="First name"
                 id="firstName"
-                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                pattern="^[^\s][A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                required
+                title="Solo acepta letras y espacios en blanco"
               />
             </div>
-
             <div class="box">
               <label for="lastName">Last name:</label>
               <input
                 type="text"
-                name="Last name"
+                name="Lastname"
                 id="lastName"
-                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                pattern="^[^\s][A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                title="Solo acepta letras y espacios en blanco"
+                required
               />
             </div>
-
             <div class="box">
               <label for="username">Username:</label>
               <input
                 type="text"
                 name="Username"
                 id="username"
-                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                pattern="^[a-zA-Z0-9_]{0,10}$"
+                title="Username no acepta @ y espaciados, maximo de 10 caracteres permitidos"
+                required
               />
             </div>
-
             <div class="box">
               <label for="password">Password:</label>
-              <input type="password" name="password" id="password" />
+              <input
+                type="password"
+                name="Password"
+                id="password"
+                required
+                pattern="^[a-zA-Z0-9_]{0,10}$"
+                title="Password no acepta @ y espaciados, maximo 10 caracteres permitidos"
+              />
             </div>
 
             <div class="box">
               <label for="repeatPassword">Confirm password:</label>
               <input
                 type="password"
-                name="repeatPassword"
+                name="RepeatPassword"
                 id="repeatPassword"
+                required
+                pattern="^[a-zA-Z0-9_]{0,10}$"
+                title="Password no acepta @ y espaciados, maximo 10 caracteres permitidos"
               />
             </div>
 
             <div class="box">
-              <label for="">Birthday:</label>
-              <input type="date" />
+              <label for="birthday">Birthday:</label>
+              <input type="date" id="birthday" name="birthday" />
             </div>
-            <div class="box">
+            <div>
               <label for="newsletter">Newsletter checkbox:</label>
-              <input type="checkbox" name="newsletter" id="newsletter" />
+              <input
+                type="checkbox"
+                name="newsletter"
+                id="newsletter"
+                required
+              />
             </div>
+
+            <button type="submit">Submit</button>
           </form>
         </article>
       </section>
+      <br />
     </main>
     <script src="./assets/scripts/index.js"></script>
   </body>

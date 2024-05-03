@@ -44,9 +44,7 @@ button:active {
     transition: transform 0.5ms ease-in;
 }
 
-button:active {
-    transform: scale(0.9);
-}
+
 
 dialog {
     margin: auto;

@@ -1,3 +1,9 @@
+:root {
+    --color-valid: rgb(25, 181, 25);
+    --color-invalid: red;
+    --background-form: #add1cd;
+}
+
 html {
     font-size: 16px;
     box-sizing: border-box;
@@ -17,31 +23,91 @@ body {
     box-sizing: inherit;
 }
 
-/* Form */
-.form {
-    background-color: rgb(155, 204, 252);
-    padding: 1em;
-    margin-top: 4rem;
-
-}
 
 .container__form {
-    padding: 2rem;
+    padding: 1rem;
+    background-color: rgb(73, 145, 131);
+    width: 50%;
+    margin: 0 auto;
 }
 
-
-form {
-    gap: 1em;
+.form {
+    background-color: var(--background-form);
+    gap: .5em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    padding: 1em;
+
 }
 
+.box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: .1rem;
+    margin-top: .7rem;
+}
+
+.form [required]:valid {
+    border: thick solid var(--color-valid);
+}
+
+.form [required]:invalid {
+    border: thin solid var(--color-invalid);
+}
+
+.form-error {
+    font-size: 1.1rem;
+    background-color: var(--color-invalid);
+    color: #000000;
+    transition: all 800ms ease;
+    color: #000000;
+    font-weight: bold;
+}
+
+button[type="submit"] {
+    width: 5rem;
+    padding: .3rem;
+    font-size: 1.1rem;
+    background-color: rgb(12, 155, 143);
+    color: #fff;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.9);
+    transition: transform 0.5ms ease-in;
+}
+
+
+.form-error.is-active {
+    display: block;
+    animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.none {
+    display: none;
+}
+
+@keyframes show-message {
+    0% {
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 label {
     font-size: 1.5rem;
 }
 
-input[type="text"] {
-    width: 10rem;
+input[type="text"],
+[type="password"],
+[type="date"] {
+    width: 12rem;
+    padding: .2em;
 }
