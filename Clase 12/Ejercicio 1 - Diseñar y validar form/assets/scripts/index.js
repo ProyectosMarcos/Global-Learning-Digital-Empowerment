@@ -58,10 +58,8 @@ document.addEventListener('keyup', (e) => {
   if (e.target.matches('.form [required]')) {
     let $input = e.target,
       pattern = $input.getAttribute('pattern');
-    console.log($input, pattern);
 
     if (pattern && $input.value !== '') {
-      console.log(`input tiene patron`);
       let regex = new RegExp(pattern);
       return !regex.exec($input.value)
         ? document.getElementById($input.name).classList.add('is-active')
