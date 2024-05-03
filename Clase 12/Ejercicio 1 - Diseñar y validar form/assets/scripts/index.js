@@ -31,6 +31,11 @@ window.addEventListener('DOMContentLoaded', () => {
       repeatPasswordError.classList.remove('none');
       return;
     }
+    inputs.addEventListener('input', () => {
+      if (name.value < 15 && lastName.value < 15) {
+        inputs.style.backgroundColor = 'red';
+      }
+    });
 
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const userRegistered = users.find((user) => user.name === name);

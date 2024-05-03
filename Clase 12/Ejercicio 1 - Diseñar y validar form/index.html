@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
     <title>Ejercicio Formulario</title>
   </head>
   <body>
@@ -21,9 +21,9 @@
                 type="text"
                 name="First name"
                 id="firstName"
-                pattern="^[^\s][A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                pattern="^(?![\d@])[^\s][A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]{0,25}$"
                 required
-                title="Solo acepta letras y espacios en blanco"
+                title="First name no puede comenzar con un espacio ni contener el carácter '@', debe tener máximo 25 caracteres, permitiendo solo letras."
               />
             </div>
             <div class="box">
@@ -32,8 +32,8 @@
                 type="text"
                 name="Lastname"
                 id="lastName"
-                pattern="^[^\s][A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
-                title="Solo acepta letras y espacios en blanco"
+                pattern="^(?![\d@])[^\s][A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]{0,25}$"
+                title="Last name no puede comenzar con un espacio ni contener el carácter '@', debe tener máximo 25 caracteres, permitiendo solo letras."
                 required
               />
             </div>
