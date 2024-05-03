@@ -1,15 +1,15 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const $modal = document.getElementById('dialog');
+  const modal = document.getElementById('dialog');
 
-  const $btnOpen = document
+  const btnOpen = document
     .getElementById('open')
-    .addEventListener('click', () => $modal.showModal());
+    .addEventListener('click', () => modal.showModal());
 
-  const $btnClose = document
+  const btnClose = document
     .getElementById('close')
-    .addEventListener('click', () => $modal.close());
+    .addEventListener('click', () => modal.close());
 
-  const $btnCancel = document
+  const btnCancel = document
     .getElementById('cancel')
-    .addEventListener('click', () => $modal.close());
+    .addEventListener('click', () => modal.close());
 });
