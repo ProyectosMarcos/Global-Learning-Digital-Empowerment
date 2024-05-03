@@ -1,7 +1,7 @@
 :root {
     --color-valid: rgb(25, 181, 25);
     --color-invalid: red;
-    --background-form: #add1cd;
+    --background-form: #8fd1c9;
 }
 
 html {
@@ -26,7 +26,7 @@ body {
 
 .container__form {
     padding: 1rem;
-    background-color: rgb(53, 55, 54);
+    background-color: rgb(105, 107, 106);
     width: 50%;
     margin: 0 auto;
 }
@@ -61,18 +61,17 @@ body {
 .form-error {
     font-size: 1.1rem;
     background-color: var(--color-invalid);
-    color: #000000;
+    color: #000;
     transition: all 800ms ease;
-    color: #000000;
     font-weight: bold;
 }
 
 button[type="submit"] {
     width: 5rem;
     padding: .3rem;
-    font-size: 1.1rem;
-    background-color: rgb(64, 162, 154);
-    color: #fff;
+    font-size: 1.2rem;
+    background-color: rgb(130, 220, 255);
+    color: #000;
     cursor: pointer;
 }
 
