@@ -26,7 +26,7 @@ body {
 
 .container__form {
     padding: 1rem;
-    background-color: rgb(73, 145, 131);
+    background-color: rgb(53, 55, 54);
     width: 50%;
     margin: 0 auto;
 }
@@ -71,7 +71,7 @@ button[type="submit"] {
     width: 5rem;
     padding: .3rem;
     font-size: 1.1rem;
-    background-color: rgb(12, 155, 143);
+    background-color: rgb(64, 162, 154);
     color: #fff;
     cursor: pointer;
 }
