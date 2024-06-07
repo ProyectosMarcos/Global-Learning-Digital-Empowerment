@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('.form');
+  const formRegister = document.querySelector('.form');
   const inputs = document.querySelectorAll('.form [required]');
   console.log(inputs);
 
@@ -11,7 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
     input.insertAdjacentElement('afterend', span);
   });
 
-  const formRegister = document.getElementById('loginForm');
   const repeatPassword = document.getElementById('repeatPassword');
 
   const repeatPasswordError = document.createElement('span');
@@ -21,32 +20,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
   formRegister.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('firstName').value;
-    const lastName = document.getElementById('lastName').value;
     const password = document.getElementById('password').value;
     const repeatPasswordValue = repeatPassword.value;
-    const birthday = document.getElementById('birthday').value;
 
     if (password !== repeatPasswordValue) {
       repeatPasswordError.classList.remove('none');
       return;
     }
-
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const userRegistered = users.find((user) => user.name === name);
-    if (userRegistered) {
-      return alert('El usuario ya está registrado');
-    }
-
-    users.push({
-      name: name,
-      lastName: lastName,
-      password: password,
-      birthday: birthday,
-    });
-    localStorage.setItem('users', JSON.stringify(users));
-    alert('Registro exitoso');
-    form.reset();
+    formRegister.reset();
   });
 
   repeatPassword.addEventListener('input', () => {
@@ -62,12 +43,6 @@ document.addEventListener('keyup', (e) => {
     if (pattern && input.value !== '') {
       let regex = new RegExp(pattern);
       return !regex.exec(input.value)
-        ? document.getElementById(input.name).classList.add('is-active')
-        : document.getElementById(input.name).classList.remove('is-active');
-    }
-
-    if (!pattern) {
-      return input.value === ''
         ? document.getElementById(input.name).classList.add('is-active')
         : document.getElementById(input.name).classList.remove('is-active');
     }
