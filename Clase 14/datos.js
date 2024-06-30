@@ -1,4 +1,4 @@
-const fs = require("fs")
+import fs from 'fs'
 const flagsfile = "./datos.js";
 
 const data = fs.readFileSync(flagsfile, { encoding: "utf8" });
